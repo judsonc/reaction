@@ -1,11 +1,10 @@
-let createdTime, totalClick = 0, correctClick = 0, reactionTime = 0;
+let createdTime, score = 0, totalClick = 0, correctClick = 0, reactionTime = 0, totalReactionTime = 0;
 
 const COLOR_OPTIONS = [
-	['B', '#209cee'],
-	['G', '#92cc41'],
-	['Y', '#f7d51d'],
-	['R', '#e76e55'],
+	['B', '#209cee'],	['G', '#92cc41'],	['Y', '#f7d51d'],	['R', '#e76e55'],
 ];
+
+const KEYBOARD_COLOR_OPTIONS = { 'q': 0, 'w': 1, 'e': 2, 'r': 3 };
 
 function getRandomColor() {
   const selectedColorKey = Math.round(Math.random() * (COLOR_OPTIONS.length - 1));
@@ -44,23 +43,31 @@ function onclick() {
 
 function pushbtn(event) {
   const pressedKey = String.fromCharCode(event.keyCode);
-  if (pressedKey > 0 && pressedKey < 5) {
-    const [key] = COLOR_OPTIONS[pressedKey - 1];
+  if (KEYBOARD_COLOR_OPTIONS.hasOwnProperty(pressedKey)) {
+    const colorKey = KEYBOARD_COLOR_OPTIONS[pressedKey]
+    const [key] = COLOR_OPTIONS[colorKey];
     return checkKey(key);
   }
 }
 
 function checkKey(key) {
-  totalClick++;
+  // totalClick++;
 
-  const lightElement = document.getElementById('light');  
+  const lightElement = document.getElementById('light');
   if (lightElement.dataset.colorKey === key){
-    correctClick++; 
-    reactionTime = (Date.now() - createdTime);
+    correctClick++;
+    score++;
+    reactionTime = Date.now() - createdTime;
+    totalReactionTime += reactionTime
+    console.log(totalReactionTime/correctClick);
+    
     lightElement.style.opacity = 0;
     makelight();
+  } else {
+    score--;
   }
-  document.getElementById('title').innerHTML = `${totalClick}/${correctClick} - ${reactionTime}ms`
+
+  document.getElementById('title').innerHTML = `SCORE: ${score} (${reactionTime}ms)`
 };
 
 function play() {
