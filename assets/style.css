@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 99vh;
+  background-color: #212529;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 980px;
+  width: 100%;
+}
+
+.nes-container-padding {
+  padding: 1.5rem 1rem;
+}
+
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 85%;
+  }
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.grow1 {
+  flex: 1;
+}
+
+.is-white {
+  background-color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+#area {
+  height: calc(100% - 182px);
+}
+
+#light {
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
