@@ -15,6 +15,9 @@
   </head>
   <body>
     <section class="container nes-container is-centered is-white">
+      <div id="back" class="hidden">
+        <i class="nes-icon close is-small"></i>
+      </div>
       <p id="title">REACTION</p>
     </section>
 
@@ -28,16 +31,13 @@
               <p>Você sabe o<br>seu tempo de reação?</p>
             </div>
             <div class="nes-balloon is-dark nes-container-padding hidden-sm">
-              <p>Clique no PLAY e vamos descobrir.</p>
-            </div>
-            <div class="nes-balloon from-right is-dark nes-container-padding hidden-sm">
               <p>
-                Um círculo aparecerá na tela<br>durante
+                Um quadrado aparecerá na tela<br>durante
                 <strong>1 (um) segundo</strong>, clique no botão de mesma cor.
-                Se quiser, use as teclas <strong>Q, W, E, R</strong>.
+                <span class="hidden-sm">Se quiser, use as teclas <strong>Q, W, E, R</strong>.</span>
               </p>
             </div>
-            <div class="nes-balloon from-right is-dark nes-container-padding hidden-md">
+            <div class="nes-balloon from-right is-dark nes-container-padding">
               <p>Clique no PLAY e vamos descobrir.</p>
             </div>
             <i class="nes-bcrikko"></i>
@@ -50,12 +50,14 @@
           <section class="message -right text-right">
             <div class="nes-balloon is-dark nes-container-padding">
               <p>
-                <span class="hidden-sm">Você terminou as 10 tentativas.<br></span>
-                Quer ver seu resultado?</p>
+                Você terminou as 10 tentativas.<br>
+                Vamos ver o seu resultado?</p>
             </div>
             <div class="nes-balloon from-right is-dark nes-container-padding">
               <p>
-                Score = <span id="result-score"></span> pts e Média = <span id="result-time"></span> ms.
+                <span class="hidden-sm">Você obteve um</span>
+                Score = <span id="result-score"></span> pts e
+                Tempo médio = <span id="result-time"></span> ms.
               </p>
             </div>
             <i class="nes-bcrikko"></i>

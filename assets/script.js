@@ -22,7 +22,15 @@ function getRandomColor() {
   return { key, color };
 }
 
-function makelight() {  
+function addAttempts() {
+  attempts++;
+  document.getElementById('title').innerHTML = 
+    `<span class="hidden-sm">Tentativa</span> ${attempts}/10 - ${reactionTime}ms`
+}
+
+function makelight() {
+  addAttempts()
+
   setTimeout(() => {
     const lightElement = document.getElementById('light');
     const areaElement = document.getElementById('area');
@@ -36,7 +44,7 @@ function makelight() {
     }
     
     lightElement.style.marginTop = `${marginTop}px`;
-    lightElement.style.marginLeft = `${marginLeft}px`;    
+    lightElement.style.marginLeft = `${marginLeft}px`;
     lightElement.style.backgroundColor = randomColor.color;
     lightElement.dataset.colorKey = randomColor.key;
     lightElement.style.opacity = 1;
@@ -55,6 +63,9 @@ function onclick() {
 };
 
 function pushbtn(event) {
+  if (attempts > MAX_ATTEMPTS)
+    return;
+
   const pressedKey = String.fromCharCode(event.keyCode);
   if (KEYBOARD_COLOR_OPTIONS.hasOwnProperty(pressedKey)) {
     const colorKey = KEYBOARD_COLOR_OPTIONS[pressedKey]
@@ -64,27 +75,26 @@ function pushbtn(event) {
 }
 
 function checkKey(key) {
-  attempts++;
-
   const lightElement = document.getElementById('light');
-  if (lightElement.dataset.colorKey === key){
-    correctClick++;
-    reactionTime = Date.now() - createdTime;
-    totalReactionTime += reactionTime
-    
-    lightElement.style.opacity = 0;
-    makelight();
+  if (lightElement.dataset.colorKey !== key){
+    addAttempts()
+    return;
   }
 
-  document.getElementById('title').innerHTML = 
-    `<span class="hidden-sm">Tentativa</span> ${attempts} de 10 - ${reactionTime}ms`
-
-  if (attempts === MAX_ATTEMPTS) {
+  correctClick++;
+  reactionTime = Date.now() - createdTime;
+  totalReactionTime += reactionTime
+  
+  lightElement.style.opacity = 0;
+  
+  if (attempts === MAX_ATTEMPTS)
     return showResults()
-  }
+
+  return makelight();
 };
 
 function showResults(){
+  console.log(attempts, correctClick);
   const score = (2*correctClick) - attempts
   const avgReactionTime = totalReactionTime/correctClick
   
@@ -98,14 +108,25 @@ function showResults(){
   document.getElementById('controls').classList.add('hidden');
 }
 
+function back() {
+  document.getElementById('controls').classList.add('hidden');
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('back').classList.add('hidden');
+  document.getElementById('light').classList.add('hidden');
+  document.getElementById('play').classList.remove('hidden');
+  document.getElementById('welcome').classList.remove('hidden');
+  document.getElementById('title').innerHTML = 'REACTION'
+}
+
 function play() {
   document.getElementById('play').classList.add('hidden');
   document.getElementById('result').classList.add('hidden');
   document.getElementById('welcome').classList.add('hidden');
+  document.getElementById('back').classList.remove('hidden');
   document.getElementById('light').classList.remove('hidden');
   document.getElementById('controls').classList.remove('hidden');
 
-  reset()
+  reset();
   makelight();
 }
 
@@ -114,4 +135,5 @@ document.getElementById('R').onclick = onclick;
 document.getElementById('G').onclick = onclick;
 document.getElementById('B').onclick = onclick;
 document.getElementById('Y').onclick = onclick;
+document.getElementById('back').onclick = back;
 document.getElementById('to-play').onclick = play;
