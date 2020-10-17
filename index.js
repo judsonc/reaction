@@ -1,9 +1,10 @@
+const { join } = require('path')
 const express = require('express')
+
+const PORT = 8000
 const app = express()
-const path = require('path')
 
-app.get('/', (_, res) => res.sendFile(path.join(__dirname + '/index.html')))
 app.use('/assets', express.static('assets'));
+app.get('/', (_, res) => res.sendFile(join(__dirname + '/index.html')))
 
-app.listen(8000)
-console.log('8000 é a porta mágica!')
+app.listen(PORT, () => console.log(`The application is up at http://localhost:${PORT}`))

@@ -18,15 +18,29 @@ body {
   padding: 1.5rem 1rem;
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 701px) {
   .container {
     width: 85%;
   }
+
+  .hidden-md {
+    display: none;
+  }
 }
 
-.btn-block {
+@media only screen and (max-width: 700px) {
+  .hidden-sm {
+    display: none;
+  }
+}
+
+.full-size {
   width: 100%;
   height: 100%;
+}
+
+button.nes-btn {
+  font-size: 15px;
 }
 
 .flex {
@@ -47,10 +61,13 @@ body {
 
 .text-right {
   text-align: right;
-  font-size: 15px;
 }
 
-#area {
+.text-left {
+  text-align: left;
+}
+
+.main-area {
   height: calc(100% - 182px);
 }
 
@@ -58,4 +75,9 @@ body {
   width: 50px;
   height: 50px;
   opacity: 0;
+}
+
+section.message-list {
+  float: right;
+  max-width: 680px;
 }
