@@ -1,6 +1,6 @@
 # Reaction
 
-Uma página WEB que tem o objetivo de medir o tempo médio de reação do usuário.
+Uma aplicação WEB que tem o objetivo de medir o tempo médio de reação do usuário.
 
 A medição do tempo de reação é feita ao mostrar um quadrado com uma das quatro cores disponíveis durante 1 segundo
 em uma posição aleatória da tela e o usuário tem que clicar no botão de mesma cor localizado na parte inferior da página.
@@ -9,6 +9,10 @@ O usuário tem 10 tentativas para acertar todas as cores dos quadrados que apare
 O score é calculado a partir da diferença entre acertos e erros.
 
 Ao terminar as 10 tentativas, é calulado o score e o tempo médio de reação e isso é mostrado na tela de resultados.
+
+## Demonstração
+
+Acesse: [https://judsonc.github.io/reaction/](https://judsonc.github.io/reaction/)
 
 ## Estrutura do código
 
