@@ -70,7 +70,7 @@ function pushbtn(event) {
 }
 
 function checkKey(pressedKey) {
-  if (attempts >= MAX_ATTEMPTS) return;
+  if (attempts > MAX_ATTEMPTS) return;
   const lightElement = document.getElementById("light");
   addAttempts();
   if (lightElement.dataset.color === COLOR_OPTIONS[pressedKey]) {
@@ -79,7 +79,7 @@ function checkKey(pressedKey) {
     totalReactionTime += reactionTime;
     lightElement.style.opacity = 0;
   }
-  if (attempts >= MAX_ATTEMPTS) return showResults();
+  if (attempts > MAX_ATTEMPTS) return showResults();
 
   return makelight();
 }
@@ -117,6 +117,7 @@ function play() {
   document.getElementById("controls").classList.remove("hidden");
 
   reset();
+  addAttempts();
   makelight();
 }
 
