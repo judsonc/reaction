@@ -63,10 +63,6 @@ button.nes-btn {
   text-align: right;
 }
 
-.text-left {
-  text-align: left;
-}
-
 .main-area {
   height: calc(100% - 182px);
   overflow: auto;
@@ -85,7 +81,6 @@ button.nes-btn {
   margin-bottom: 0;
 }
 
-section.message-list {
-  float: right;
-  max-width: 680px;
+.avatar-bcrikko {
+  margin: 8px 4px;
 }
