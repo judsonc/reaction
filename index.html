@@ -9,8 +9,14 @@
     <meta name="description" content="The Reaction App." />
     <link rel="apple-touch-icon" href="./assets/logo192.png" />
     <link rel="manifest" href="./assets/manifest.json" />
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
-    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/nes.css@latest/css/nes.min.css"
+      rel="stylesheet"
+    />
     <link href="./assets/style.css" rel="stylesheet" />
   </head>
   <body>
@@ -23,18 +29,20 @@
 
     <section id="area" class="container flex main-area">
       <div id="light" class="nes-container is-rounded hidden"></div>
-      
+
       <section id="welcome" class="full-size nes-container-padding">
         <section class="message-list">
           <section class="message -right text-right">
             <div class="nes-balloon is-dark nes-container-padding">
-              <p>Você sabe o<br>seu tempo de reação?</p>
+              <p>Você sabe o<br />seu tempo de reação?</p>
             </div>
             <div class="nes-balloon is-dark nes-container-padding hidden-sm">
               <p>
-                Um quadrado aparecerá na tela<br>durante
+                Um quadrado aparecerá na tela<br />durante
                 <strong>1 (um) segundo</strong>, clique no botão de mesma cor.
-                <span class="hidden-sm">Se quiser, use as teclas <strong>Q, W, E, R</strong>.</span>
+                <span class="hidden-sm"
+                  >Se quiser, use as teclas <strong>Q, W, E, R</strong>.</span
+                >
               </p>
             </div>
             <div class="nes-balloon from-right is-dark nes-container-padding">
@@ -50,14 +58,15 @@
           <section class="message -right text-right">
             <div class="nes-balloon is-dark nes-container-padding">
               <p>
-                Você terminou as 10 tentativas.<br>
-                Vamos ver o seu resultado?</p>
+                Você terminou as 10 tentativas.<br />
+                Vamos ver o seu resultado?
+              </p>
             </div>
             <div class="nes-balloon from-right is-dark nes-container-padding">
               <p>
                 <span class="hidden-sm">Você obteve um</span>
-                Score = <span id="result-score"></span> pts e
-                Tempo médio = <span id="result-time"></span> ms.
+                Score = <span id="result-score"></span> pts e Tempo médio =
+                <span id="result-time"></span> ms.
               </p>
             </div>
             <i class="nes-bcrikko"></i>
@@ -66,35 +75,59 @@
       </section>
     </section>
 
-    <section id="play" class="container flex nes-container nes-container-padding is-white">
+    <section
+      id="play"
+      class="container flex nes-container nes-container-padding is-white"
+    >
       <div class="grow1">
-          <button type="button" id="to-play" class="full-size nes-btn">PLAY</button>
+        <button type="button" id="to-play" class="full-size nes-btn">
+          PLAY
+        </button>
       </div>
     </section>
 
-    <section id="controls" class="container flex nes-container nes-container-padding is-white hidden">
+    <section
+      id="controls"
+      class="container flex nes-container nes-container-padding is-white hidden"
+    >
       <div class="grow1">
-        <button type="button" id="B" class="full-size nes-btn is-primary text-right">
+        <button
+          type="button"
+          id="q"
+          class="full-size nes-btn is-primary text-right"
+        >
           &nbsp;<span class="hidden-sm">q</span>
         </button>
       </div>
       <div class="grow1">
-        <button type="button" id="G" class="full-size nes-btn is-success text-right">
+        <button
+          type="button"
+          id="w"
+          class="full-size nes-btn is-success text-right"
+        >
           &nbsp;<span class="hidden-sm">w</span>
         </button>
       </div>
       <div class="grow1">
-        <button type="button" id="Y" class="full-size nes-btn is-warning text-right">
+        <button
+          type="button"
+          id="e"
+          class="full-size nes-btn is-warning text-right"
+        >
           &nbsp;<span class="hidden-sm">e</span>
         </button>
       </div>
       <div class="grow1">
-        <button type="button" id="R" class="full-size nes-btn is-error text-right">
+        <button
+          type="button"
+          id="r"
+          class="full-size nes-btn is-error text-right"
+        >
           &nbsp;<span class="hidden-sm">r</span>
         </button>
       </div>
     </section>
-   
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <script async src="./assets/script.js"></script>
   </body>
