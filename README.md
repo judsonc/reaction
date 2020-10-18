@@ -6,7 +6,7 @@ A medição do tempo de reação é feita ao mostrar um quadrado com uma das qua
 em uma posição aleatória da tela e o usuário tem que clicar no botão de mesma cor localizado na parte inferior da página.
 O usuário tem 10 tentativas para acertar todas as cores dos quadrados que aparecerem. O score máximo de 10 pontos é atingido se todas as tentativas forem corretas.
 
-O score é calculado a partir da diferenção entre acertos e erros.
+O score é calculado a partir da diferença entre acertos e erros.
 
 Ao terminar as 10 tentativas, é calulado o score e o tempo médio de reação e isso é mostrado na tela de resultados.
 

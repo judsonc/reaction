@@ -54,7 +54,7 @@ function makelight() {
   setTimeout(() => {
     if (Date.now() - createdTime > 1000)
       document.getElementById('light').style.opacity = 0;
-  }, 1200);
+  }, 1250);
 }
 
 function onclick() {
