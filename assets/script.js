@@ -6,7 +6,6 @@ const COLOR_OPTIONS = [
 
 const KEYBOARD_COLOR_OPTIONS = {
   'q': 0, 'w': 1, 'e': 2, 'r': 3,
-  'Q': 0, 'W': 1, 'E': 2, 'R': 3,
 };
 
 function reset() {
@@ -55,7 +54,7 @@ function makelight() {
   setTimeout(() => {
     if (Date.now() - createdTime > 1000)
       document.getElementById('light').style.opacity = 0;
-  }, 1250);
+  }, 1200);
 }
 
 function onclick() {
@@ -66,7 +65,7 @@ function pushbtn(event) {
   if (attempts > MAX_ATTEMPTS)
     return;
 
-  const pressedKey = String.fromCharCode(event.keyCode);
+  const pressedKey = String.fromCharCode(event.keyCode).toLowerCase();
   if (KEYBOARD_COLOR_OPTIONS.hasOwnProperty(pressedKey)) {
     const colorKey = KEYBOARD_COLOR_OPTIONS[pressedKey]
     const [key] = COLOR_OPTIONS[colorKey];
