@@ -85,8 +85,8 @@ function checkKey(pressedKey) {
 }
 
 function showResults() {
-  const score = 2 * correctClick - attempts;
-  const avgReactionTime = totalReactionTime / correctClick;
+  const score = 2 * correctClick - MAX_ATTEMPTS;
+  const avgReactionTime = totalReactionTime / (correctClick || 1);
 
   document.getElementById("result-score").innerHTML = score;
   document.getElementById("result-time").innerHTML = avgReactionTime.toFixed(0);
